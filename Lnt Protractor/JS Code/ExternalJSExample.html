@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 5px;
+                padding:5px;
+            }
+          p{
+              border: 2px solid gray;
+              border-radius: 5px;
+          }
+        </style>
+        <script src="./jsCode.js"></script>
+        <script>
+            window.addEventListener("load", function(){
+                   var btn = document.getElementById("btnGet");
+                   btn.addEventListener("click", function(){
+                        var v1 = parseFloat(document.getElementById("firstValue").value);
+                       var v2 = parseFloat(document.getElementById("secondValue").value);
+                       var operand = document.getElementById("operand").value;
+                       var result = 0;
+                       switch (operand) {
+                           case "+":
+                               result = addFunc(v1, v2);
+                               break;
+                           case "-":
+                               result = subFunc(v1, v2);
+                               break;
+                           case "/":
+                               result = divFunc(v1, v2);
+                               break;
+                           default:
+                               result = mulFunc(v1, v2);
+                               break;
+                       }
+                       document.getElementById("spDisplay").innerHTML = "<b><u>" + result + "</u></b>";
+                   }); 
+            });
+        </script>
+    </head>
+    <div>
+        <h1>Calculator</h1>
+        <p>
+            Enter the first value: <input type="number" id="firstValue" />
+            <select id="operand">
+                <option>+</option>
+                <option>-</option>
+                <option>X</option>
+                <option>/</option>
+            </select>
+            Enter the second value: <input type="number" id="secondValue" />
+            <button id="btnGet">=</button>
+            <span id="spDisplay"></span>
+        </p>
+    </div>
+</html>
