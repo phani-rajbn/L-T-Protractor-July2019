@@ -1,0 +1,6 @@
+Javascript is a scripting language for developing web based applications on the client side. The Code is processed thro Interpretors that are made available in the Browser. U can run JS code on a browser. Scripts(Programmable code) that are executed while the user views his page is called as Scripting language.
+Page is a HTML or any Web based document that is viewed thro  a thin software called BROWSER.
+HTML is static, it must be reloaded if any changes made to the file are to be reflected on the browser. 
+There is a framework and a library called NODEJS which allows to run JS code on a command prompt. 
+
+var is the keyword used to declare any variable in JS. But when it stores the data, the var will internally hold any of the following types: number, string, boolea, object. typeof operator is used to find the internal data type associated with the variable. The data type is assigned when the value is set to it. Else it will called as undefined.  
