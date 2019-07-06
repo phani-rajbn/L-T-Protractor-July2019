@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Example</title>
+    <style>
+    *{
+        padding: 5px;
+        margin: 15px;
+    }
+    div{
+        display: inline-block;
+        width: 40%;
+        border: 2px solid gray;
+        border-radius: 5px;
+        vertical-align: top;
+    }
+    </style>
+    <script>
+        var fruits = ["Apple", "Mango", "Orange", "PineApple"];//global object
+        window.addEventListener("load", function(){
+            var list = document.getElementById("lstFruits");
+            for(i = 0; i < fruits.length; i++)
+            {
+                var li = '<li>' + fruits[i] + "</li>";
+                list.innerHTML += li;//appends the list item into the orderedlist...
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Arrays Example</h1>
+    <hr/>
+    <div>
+        <h2>Current Items in Basket</h2>
+        <ol id="lstFruits" />
+    </div>
+    <div>
+        <h2>Add New Item</h2>
+        <input type="text" id="txtNew" placeholder="Enter the fruit"/>
+        <button id="btnAdd">Add new</button>
+    </div>
+</body>
+</html>
