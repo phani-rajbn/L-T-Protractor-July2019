@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sapna Book House</title>
+    <!-- <link rel="stylesheet" href="./Common.css"> -->
+    <script src="./Common.js"></script>
+    <script>
+        var store = new bookStore();//Instantiate the BookStore class as object....
+        window.addEventListener('load', ()=> {
+            var table = document.getElementById("tblRecords");
+            var records = store.getAllBooks();
+            records.forEach(element => {
+                var row = '<tr><td>' + element.bookID + '</td><td>';
+                    row += element.title + '</td><td>';
+                    row += element.price +'</td></tr>';
+                    table.innerHTML += row;    
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Sapna Book House</h1>
+    <hr/>
+    <div>
+        <h2>List of Books</h2>
+        <table border="1" id="tblRecords">
+            <tr>
+                <th>BookID</th>
+                <th>Book Title</th>
+                <th>Book Price</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

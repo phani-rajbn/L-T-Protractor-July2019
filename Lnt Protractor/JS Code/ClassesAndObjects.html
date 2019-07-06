@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Classes and Objects</title>
+        <script>
+        var employee = {};
+        employee.empID = 123;
+        employee.empName ="Phaniraj";
+        employee.empAddress = "Bangalore";
+        console.log(employee);//Use this function to log details of UR program and can be viewed on the Console window of the Browser..
+        console.log(JSON.stringify(employee));//JSON is a format of sharing the data among applications(Andriod, Web API, Springs, Angular, Nodejs)
+
+        /////////////Use this syntax to create instances of the object////////////////////
+        var emp = function(id, name, address){
+            this.empId = id;
+            this.empName = name;
+            this.empAddress = address;
+
+            this.showDetails = function(){
+                console.log(JSON.stringify(this));
+            }
+        }//The Function when invoked returns an object of emp to U
+
+        var e1 = new emp(123, "Suresh","Mysore");//Constructor of the Class....
+        var e2 = new emp(124, "Gopal","Chennai");//Constructor of the Class....
+        var e3 = new emp(125, "Sruthi","Pune");//Constructor of the Class....
+        var e4 = new emp(126, "Arun","Mumbai");//Constructor of the Class....
+        alert(e4.empName);//access the members of the class using .operator
+        e1.showDetails();//accessing the methods...
+        e2.showDetails();
+        // console.log(e3);
+        // console.log(e4);
+        </script>
+    </head>
+    <body>
+        <h1>Classes Demo</h1>
+        <hr/>
+    </body>
+</html>
