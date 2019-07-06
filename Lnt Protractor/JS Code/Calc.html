@@ -29,5 +29,31 @@
    </div>
    <hr/>
    &copy; Phaniraj B.N. 
+   <script>
+    function onClick(){
+       var v1 = parseFloat(document.getElementById("firstValue").value);
+       var v2 = parseFloat(document.getElementById("secondValue").value);
+       var operand = document.getElementById("operand").value;
+       var result = 0;
+       switch (operand) {
+           case "+":
+               result = v1 + v2;
+               break;
+            case "-":
+                result = v1 - v2;
+                break;
+            case "/":
+                result = v1 /v2;
+                break;
+           default:
+               result = v1 * v2;
+               break;
+       }
+       document.getElementById("spDisplay").innerHTML = "<b><u>" + result + "</u></b>"; 
+    }
+
+    var btn = document.getElementById("btnGet");
+    btn.addEventListener("click", onClick);
+   </script>
 </body>
 </html>

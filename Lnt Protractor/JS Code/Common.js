@@ -43,3 +43,15 @@ var bookStore = function(){
         return store;
     }
 }
+
+function $(element){
+    return document.getElementById(element);
+}
+
+function show(element){
+    document.getElementById(element).style.visibility = "visible";
+}
+
+function $click(element, func){
+    $(element).addEventListener('click', func);
+}

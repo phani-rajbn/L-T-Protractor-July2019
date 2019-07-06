@@ -17,13 +17,22 @@
     </style>
     <script>
         var fruits = ["Apple", "Mango", "Orange", "PineApple"];//global object
-        window.addEventListener("load", function(){
-            var list = document.getElementById("lstFruits");
-            for(i = 0; i < fruits.length; i++)
-            {
+        function populate(){
+             var list = document.getElementById("lstFruits");
+            list.innerHTML = "";//reset the ol...
+             for (i = 0; i < fruits.length; i++) {
                 var li = '<li>' + fruits[i] + "</li>";
                 list.innerHTML += li;//appends the list item into the orderedlist...
             }
+        }
+        window.addEventListener("load", function(){
+            populate();
+            var btn = document.getElementById("btnAdd");
+            btn.addEventListener("click", function(){
+                var value = document.getElementById('txtNew').value;
+                fruits.push(value);
+                populate();
+            })
         });
     </script>
 </head>

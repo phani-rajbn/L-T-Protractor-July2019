@@ -1,0 +1,6 @@
+Nodejs is a JS library and Framework for developing server side programs using JS. It uses Chrome's V8 JS Engine to process UR js code. This makes UR JS code run out of browser which can be anything like a command prompt to a hardware device that has a basic OS in it. Nodejs gave a lot of scope of JS to develop apps like IOT and many more. With Nodejs, we can have client side JS, Server side JS and UR Database can also be JS when U use DBs like MongoDB. From the Front end to the database layer, U can have one JS language. MEAN Stack is the most popular application development architecture on JS
+MongDB as Database, Express as Server, Angular as UR Client side App and Nodejs to manage these components as one unit.
+Nodejs is based on Modules. Each Module is a self contained unit that can be referenced in other jS files. 
+All Nodejs components are called as modules. modules are created and exported so that it can be used by other JS apps. Those js apps also can be another module. 
+Nodejs modules can be placed on clound thro a repository called NPM(Node Package Manager). Based on Github, U could place all UR Nodejs modules exported as packages to be consumed by various Nodejs Apps across the globe. This is one of the largest reusable open source code sharing platform in the world. 
+ 

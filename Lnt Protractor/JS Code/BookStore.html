@@ -6,30 +6,88 @@
     <script src="./Common.js"></script>
     <script>
         var store = new bookStore();//Instantiate the BookStore class as object....
-        window.addEventListener('load', ()=> {
+        function hideAll(){
+            $("addBook").style.visibility = "hidden";;
+            $("deleteBook").style.visibility = "hidden";
+            $("table").style.visibility = "hidden";
+        }
+
+        function mapAchors(){
+            $('aAdd').addEventListener('click', () => {
+                hideAll();
+                show("addBook");
+            });
+            $('aDelete').addEventListener('click', () => {
+                hideAll();
+                show("deleteBook");
+            });
+            $('aShow').addEventListener('click', () => {
+                hideAll();
+                show("table");
+                readBooks();
+            });
+        }
+
+        function mapButtonHandlers(){
+            $click('btnAdd', ()=>{
+                 var id = $("txtAddID").value;   
+                 var title = $("txtAddTitle").value;   
+                 var cost = $("txtAddPrice").value;   
+                 var bk = new book(id, title, cost);
+                 store.addBook(bk);   
+                 hideAll();
+            })
+            $click('btnDelete', () => {
+
+            })
+        }
+        function onInit(){
+            mapAchors();
+            mapButtonHandlers();
+        }
+        function readBooks(){
             var table = document.getElementById("tblRecords");
+            table.innerHTML ='<tr><th> BookID</th><th>Book Title</th><th>Book Price</th></tr>';
             var records = store.getAllBooks();
             records.forEach(element => {
                 var row = '<tr><td>' + element.bookID + '</td><td>';
-                    row += element.title + '</td><td>';
-                    row += element.price +'</td></tr>';
-                    table.innerHTML += row;    
+                row += element.title + '</td><td>';
+                row += element.price + '</td></tr>';
+                table.innerHTML += row;
             });
+        }
+        window.addEventListener('load', ()=> {
+            hideAll();
+            
+            onInit();
         });
     </script>
 </head>
 <body>
     <h1>Sapna Book House</h1>
+    <p>
+        <a id="aShow" href="#">Display All Books</a>   
+        <a id="aAdd" href="#">Add New Book</a>   
+        <a id="aDelete" href="#">Delete A Book</a>  
+    </p>
     <hr/>
-    <div>
+    <div id="table">
         <h2>List of Books</h2>
         <table border="1" id="tblRecords">
-            <tr>
-                <th>BookID</th>
-                <th>Book Title</th>
-                <th>Book Price</th>
-            </tr>
+            
         </table>
+    </div>
+    <div id="addBook">
+        <h1>Add new Book</h1>
+        <p><input id="txtAddID" placeholder="Enter the ID of the Book"/></p>
+        <p><input id="txtAddTitle" placeholder="Enter the Title of the Book"/></p>
+        <p><input id="txtAddPrice" placeholder="Enter the Price of the Book"/></p>
+        <p><button id="btnAdd">Add To Store</button></p>
+    </div>
+    <div id="deleteBook">
+        <h1>Delete Old Book</h1>
+        <input id="txtDelete" placeholder="Enter the ID to delete"/>
+        <button id="btnDelete">X</button>
     </div>
 </body>
 </html>
