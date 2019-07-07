@@ -1,0 +1,18 @@
+JasmineJs ia Testing framework for developing Test Suites for JS Apps. It is used for BDD(Behavioral Development) Testing where the App Behavior as well as Unit based testing is done using JS. The Type safe version of Jasmine is available now to perform Unit testing on TypeScript also.
+//Most of the Unit testing code is done thro Jasmine if U come with the backgrouund of JS. However there is other framework called Mocha which has to be used with a runner like CHAI. U could use CucumberJs for testing code for the popular programming languages like C#, Java and JavaScript and it supports Maven. 
+Protractor uses Jasmine by default. 
+Nodejs helps in distributing Jasmine to all Applications using NPM. NPM is a repository of all nodejs packages that developers could use or even post their packages into the respository  
+Steps:
+npm init --y: create a default package.json file to allow npm to download the packages and there by make UR folder a Nodejs Application. 
+
+npm i jasmine --save-dev" Installs the Jaasmine Framework in the node_modules of the Application which will be in the current directory. These module reference will also be made in the package.json so that if the developers run the npm again, it will download the latest packages as update..
+
+npm i -g jasmine: for installing jasmine as global module, it will be placed in the npm of the User APp Data....
+
+npm config set https-proxy http://proxy.[Company Name].com:8080  
+npm config set https-proxy http://proxy.[Company Name].com:8080
+Use this to configure proxy for downloading npm packages....
+
+jasmine init: sets the infrastructure for creating test suites. 
+
+To execute the suite in the order of the Tests, U should set the random attribute to false. The Test cases will execute in the order of the definitions...
